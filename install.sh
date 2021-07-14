@@ -25,7 +25,7 @@ elif [[ "$OS" != "Darwin" ]]; then
 fi
 
 # Required installation paths. To install elsewhere (which is unsupported)
-# you can untar git@github.com/Homebrew/brew/tarball/master
+# you can untar https://github.com/Homebrew/brew/tarball/master
 # anywhere you like.
 if [[ -z "${HOMEBREW_ON_LINUX-}" ]]; then
   UNAME_MACHINE="$(/usr/bin/uname -m)"
@@ -84,8 +84,8 @@ MACOS_NEWEST_UNSUPPORTED="12.0"
 MACOS_OLDEST_SUPPORTED="10.14"
 
 # For Homebrew on Linux
-REQUIRED_RUBY_VERSION=2.6  # git@github.com/Homebrew/brew/pull/6556
-REQUIRED_GLIBC_VERSION=2.13  # git@docs.brew.sh/Homebrew-on-Linux#requirements
+REQUIRED_RUBY_VERSION=2.6  # https://github.com/Homebrew/brew/pull/6556
+REQUIRED_GLIBC_VERSION=2.13  # https://docs.brew.sh/Homebrew-on-Linux#requirements
 
 # no analytics during installation
 export HOMEBREW_NO_ANALYTICS_THIS_RUN=1
@@ -293,7 +293,7 @@ then
 	Homebrew requires Ruby $REQUIRED_RUBY_VERSION which was not found on your system.
 	Homebrew portable Ruby requires Glibc version $REQUIRED_GLIBC_VERSION or newer,
 	and your Glibc version is too old.
-	See ${tty_underline}git@docs.brew.sh/Homebrew-on-Linux#requirements${tty_reset}
+	See ${tty_underline}https://docs.brew.sh/Homebrew-on-Linux#requirements${tty_reset}
 	Install Ruby $REQUIRED_RUBY_VERSION and add its location to your PATH.
 	EOFABORT
     )"
@@ -318,7 +318,7 @@ cd "/usr" || exit 1
 if ! command -v git >/dev/null; then
     abort "$(cat <<EOABORT
 You must install Git before installing Homebrew. See:
-  ${tty_underline}git@docs.brew.sh/Installation${tty_reset}
+  ${tty_underline}https://docs.brew.sh/Installation${tty_reset}
 EOABORT
 )"
 fi
@@ -326,7 +326,7 @@ fi
 if ! command -v curl >/dev/null; then
     abort "$(cat <<EOABORT
 You must install cURL before installing Homebrew. See:
-  ${tty_underline}git@docs.brew.sh/Installation${tty_reset}
+  ${tty_underline}https://docs.brew.sh/Installation${tty_reset}
 EOABORT
 )"
 fi
@@ -390,7 +390,7 @@ else
     abort "$(cat <<EOABORT
 Homebrew on Linux is not supported on ARM processors.
 You can try an alternate installation method instead:
-  ${tty_underline}git@docs.brew.sh/Homebrew-on-Linux#arm${tty_reset}
+  ${tty_underline}https://docs.brew.sh/Homebrew-on-Linux#arm${tty_reset}
 EOABORT
 )"
   elif [[ "$UNAME_MACHINE" != "x86_64" ]]; then
@@ -403,7 +403,7 @@ if [[ -z "${HOMEBREW_ON_LINUX-}" ]]; then
   if version_lt "$macos_version" "10.7"; then
     abort "$(cat <<EOABORT
 Your Mac OS X version is too old. See:
-  ${tty_underline}git@github.com/mistydemeo/tigerbrew${tty_reset}
+  ${tty_underline}https://github.com/mistydemeo/tigerbrew${tty_reset}
 EOABORT
 )"
   elif version_lt "$macos_version" "10.10"; then
@@ -442,7 +442,7 @@ echo "${HOMEBREW_PREFIX}/etc/bash_completion.d/brew"
 echo "${HOMEBREW_REPOSITORY}"
 
 # Keep relatively in sync with
-# git@github.com/Homebrew/brew/blob/master/Library/Homebrew/keg.rb
+# https://github.com/Homebrew/brew/blob/master/Library/Homebrew/keg.rb
 directories=(bin etc include lib sbin share opt var
              Frameworks
              etc/bash_completion.d lib/pkgconfig
@@ -713,7 +713,7 @@ ring_bell
 ohai "Homebrew has enabled anonymous aggregate formulae and cask analytics."
 echo "$(cat <<EOS
 ${tty_bold}Read the analytics documentation (and how to opt-out) here:
-  ${tty_underline}git@docs.brew.sh/Analytics${tty_reset}
+  ${tty_underline}https://docs.brew.sh/Analytics${tty_reset}
 No analytics data has been sent yet (or will be during this \`install\` run).
 EOS
 )
@@ -721,7 +721,7 @@ EOS
 
 ohai "Homebrew is run entirely by unpaid volunteers. Please consider donating:"
 echo "$(cat <<EOS
-  ${tty_underline}git@github.com/Homebrew/brew#donations${tty_reset}
+  ${tty_underline}https://github.com/Homebrew/brew#donations${tty_reset}
 EOS
 )
 "
@@ -767,7 +767,7 @@ fi
 
 echo "- Run \`brew help\` to get started"
 echo "- Further documentation: "
-echo "    ${tty_underline}git@docs.brew.sh${tty_reset}"
+echo "    ${tty_underline}https://docs.brew.sh${tty_reset}"
 
 if [[ -n "${HOMEBREW_ON_LINUX-}" ]]; then
   echo "- Install the Homebrew dependencies if you have sudo access:"
@@ -783,7 +783,7 @@ if [[ -n "${HOMEBREW_ON_LINUX-}" ]]; then
   fi
 
   cat <<EOS
-    See ${tty_underline}git@docs.brew.sh/linux${tty_reset} for more information
+    See ${tty_underline}https://docs.brew.sh/linux${tty_reset} for more information
 - We recommend that you install GCC:
     brew install gcc
 
